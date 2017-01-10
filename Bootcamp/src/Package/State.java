@@ -1,7 +1,7 @@
 package Package;
 
 /**
- * Created by facun on 10/01/2017.
+ * Created by facundo crusta on 10/01/2017.
  */
 public class State {
     //Attributes
@@ -10,19 +10,21 @@ public class State {
     private String abbr;
     private long area;
     private String capital;
+    private Weather weather;
     //Constructor
     public State ()
     {
 
     }
     //Constructor with parameters
-    public State(String countryCode, String name, String abbr, long area, String capital)
+    public State(String countryCode, String name, String abbr, long area, String capital, Weather weather)
     {
         this.countryCode = countryCode;
         this.name = name;
         this.abbr = abbr;
         this.area = area;
         this.capital = capital;
+        this.weather =  weather;
     }
     //Getter methods
     public String getCountryCode() {
@@ -57,11 +59,19 @@ public class State {
         this.abbr = abbr;
     }
 
-    public void setArea(long area) {
-        this.area = area;
+
+   public void setCapital(String capital) {
+        this.capital = capital;
     }
 
-    public void setCapital(String capital) {
-        this.capital = capital;
+    public String toString() {
+        return "State info {" +
+                "Country Code='" + countryCode + '\'' +
+                ", Name='" + name + '\'' +
+                ", Abbreviation='" + abbr + '\'' +
+                ", Area=" + area +
+                ", Capital='" + capital + '\'' +
+                '}' + "\n" +
+                "Weather information for State on date "+weather.toString();
     }
 }

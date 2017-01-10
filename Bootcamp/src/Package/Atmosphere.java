@@ -1,23 +1,26 @@
 package Package;
 
 /**
- * Created by facun on 10/01/2017.
+ * Created by facundo crusta on 10/01/2017.
  */
 public class Atmosphere {
 
+    //Attributes
     private int humidity;
-    private float pressure;
+    private double pressure;
     private int visibility;
     private int rising;
 
+    //Constructors
     public Atmosphere(){}
-    public Atmosphere(int humidity, float pressure, int visibility, int rising) {
+    public Atmosphere(int humidity, double pressure, int visibility, int rising) {
         this.humidity = humidity;
         this.pressure = pressure;
         this.visibility = visibility;
         this.rising = rising;
     }
 
+    // Getters and Setters methods
     public int getHumidity() {
         return humidity;
     }
@@ -26,11 +29,11 @@ public class Atmosphere {
         this.humidity = humidity;
     }
 
-    public float getPressure() {
+    public double getPressure() {
         return pressure;
     }
 
-    public void setPressure(float pressure) {
+    public void setPressure(double pressure) {
         this.pressure = pressure;
     }
 
@@ -48,5 +51,15 @@ public class Atmosphere {
 
     public void setRising(int rising) {
         this.rising = rising;
+    }
+
+   //ToString method
+    public String toString() {
+        return "\n"+"Atmosphere {" +
+                "humidity=" + humidity +
+                ", pressure=" + pressure +
+                ", visibility=" + visibility +
+                ", rising=" + rising +
+                '}';
     }
 }

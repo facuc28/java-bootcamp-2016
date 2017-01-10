@@ -1,20 +1,26 @@
 package Package;
 
 /**
- * Created by facun on 10/01/2017.
+ * Created by facundo crusta on 10/01/2017.
  */
 public class Actual extends Weather {
 
-    private float temprature;
-    private Weather C1;
-    public Actual (){}
+    //Attributes
+    private double temprature;
+
+    //Constructors
+    public Actual(){}
+    public Actual (double temperature){
+        this.temprature = temperature;
+    }
 
     public Actual(String date, String description, float temprature) {
         super(date, description);
         this.temprature = temprature;
     }
 
-    public float getTemprature() {
+    //Getters and Setters methods
+    public double getTemprature() {
         return temprature;
     }
     public String getDate(){
@@ -25,7 +31,7 @@ public class Actual extends Weather {
         return super.getDescription();
     }
 
-    public void setTemprature(float temprature) {
+    public void setTemprature(double temprature) {
         this.temprature = temprature;
     }
     public void setDate(String date)
@@ -37,4 +43,10 @@ public class Actual extends Weather {
         super.setDescription(description);
     }
 
+    //ToString method
+    public String toString() {
+        return  "Weather for today "+ super.getDate()+"\n" +
+                "Temperature= " + temprature + "\n" +
+                "Description= " + super.getDescription().toString();
+    }
 }

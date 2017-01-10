@@ -1,14 +1,15 @@
 package Package;
 
 /**
- * Created by facun on 10/01/2017.
+ * Created by facundo crusta on 10/01/2017.
  */
 public class Country {
-
+    //Attributes
     private String name;
     private String countryCode2;
     private String countryCode3;
 
+    //Constructors
     public Country ()
     {}
     public Country(String name, String countryCode2, String countryCode3)
@@ -17,6 +18,7 @@ public class Country {
         this.countryCode2 = countryCode2;
         this.countryCode3 = countryCode3;
     }
+    // Getters and Setters methods
     public String getName()
     {
         return this.name;

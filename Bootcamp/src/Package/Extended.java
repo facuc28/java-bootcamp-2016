@@ -1,28 +1,31 @@
 package Package;
 
 /**
- * Created by facun on 10/01/2017.
+ * Created by facundo crusta on 10/01/2017.
  */
 public class Extended extends Weather {
 
+    //Attributes
     private String weekDay;
-    private float maximum;
-    private float minimum;
+    private double maximum;
+    private double minimum;
 
+    //Constructors
     public Extended(){}
-    public Extended(String weekDay, float maximum, float minimum) {
+    public Extended(String weekDay, double maximum, double minimum) {
         this.weekDay = weekDay;
         this.maximum = maximum;
         this.minimum = minimum;
     }
 
-    public Extended(String date, String description, String weekDay, float maximum, float minimum) {
+    public Extended(String date, String description, String weekDay, double maximum, double minimum) {
         super(date, description);
         this.weekDay = weekDay;
         this.maximum = maximum;
         this.minimum = minimum;
     }
 
+    //Getters and Setters methods
     public String getWeekDay() {
         return weekDay;
     }
@@ -31,19 +34,19 @@ public class Extended extends Weather {
         this.weekDay = weekDay;
     }
 
-    public float getMaximum() {
+    public Double getMaximum() {
         return maximum;
     }
 
-    public void setMaximum(float maximum) {
+    public void setMaximum(Double maximum) {
         this.maximum = maximum;
     }
 
-    public float getMinimum() {
+    public double getMinimum() {
         return minimum;
     }
 
-    public void setMinimum(float minimum) {
+    public void setMinimum(double minimum) {
         this.minimum = minimum;
     }
     public String getDate()
@@ -63,4 +66,12 @@ public class Extended extends Weather {
         super.setDescription(description);
     }
 
+    //ToString method
+    public String toString() {
+        return "{" +
+                "Week Day='" + weekDay + '\'' +
+                ", maximum=" + maximum +
+                ", minimum=" + minimum +
+                '}';
+    }
 }
