@@ -1,38 +1,40 @@
 package Package;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by facundo crusta on 10/01/2017.
  */
-public class State {
-    //Attributes
-    private String countryCode;
-    private String name;
+public class State extends Country {
     private String abbr;
     private long area;
     private String capital;
-    private Weather weather;
+    private List<City> listOfCities;
     //Constructor
     public State ()
     {
 
     }
     //Constructor with parameters
-    public State(String countryCode, String name, String abbr, long area, String capital, Weather weather)
-    {
-        this.countryCode = countryCode;
-        this.name = name;
+
+    public State(String abbr, long area, String capital, List<City> listOfCities) {
         this.abbr = abbr;
         this.area = area;
         this.capital = capital;
-        this.weather =  weather;
+        this.listOfCities = listOfCities;
     }
-    //Getter methods
-    public String getCountryCode() {
-        return countryCode;
+
+    public State(String name, String countryCode2, String countryCode3, String abbr, long area, String capital, List<City> listOfCities) {
+        super(name, countryCode2, countryCode3);
+        this.abbr = abbr;
+        this.area = area;
+        this.capital = capital;
+        this.listOfCities = listOfCities;
     }
 
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     public String getAbbr() {
@@ -46,13 +48,9 @@ public class State {
     public String getCapital() {
         return capital;
     }
-    // Setter Methods
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-    }
 
     public void setName(String name) {
-        this.name = name;
+        super.setName(name);
     }
 
     public void setAbbr(String abbr) {
@@ -64,14 +62,35 @@ public class State {
         this.capital = capital;
     }
 
+    //Methods
+    public boolean addCity(int index, City C)
+    {
+        listOfCities.add(index,C);
+        return true;
+
+    }
+    public City getCity(String name)
+    {
+        for (City C : listOfCities)
+        {
+            if (C.getName().equalsIgnoreCase(name))
+                return C;
+
+        }
+        return null;
+    }
+
     public String toString() {
-        return "State info {" +
-                "Country Code='" + countryCode + '\'' +
-                ", Name='" + name + '\'' +
-                ", Abbreviation='" + abbr + '\'' +
+        String city="";
+        for(City C : listOfCities)
+        {
+            city +="\n"+C.getName();
+        }
+        return "State { Name= " + super.getName() +", "+
+                " Abbreviation ='" + abbr + '\'' +
                 ", Area=" + area +
-                ", Capital='" + capital + '\'' +
-                '}' + "\n" +
-                "Weather information for State on date "+weather.toString();
+                ", Capital='" + capital + '\''+"}" +"\n"+
+                "Ciudades: "+city;
+
     }
 }

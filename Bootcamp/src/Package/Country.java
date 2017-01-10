@@ -1,5 +1,8 @@
 package Package;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by facundo crusta on 10/01/2017.
  */
@@ -8,6 +11,7 @@ public class Country {
     private String name;
     private String countryCode2;
     private String countryCode3;
+    private List<State> listOfStates;
 
     //Constructors
     public Country ()
@@ -17,6 +21,7 @@ public class Country {
         this.name = name;
         this.countryCode2 = countryCode2;
         this.countryCode3 = countryCode3;
+        listOfStates = new ArrayList<State>();
     }
     // Getters and Setters methods
     public String getName()
@@ -44,4 +49,39 @@ public class Country {
         this.countryCode3 = countryCode3;
     }
 
+    public List<State> getListOfStates() {
+        return listOfStates;
+    }
+
+    //Methods
+    public boolean addState(int index, State s)
+    {
+        listOfStates.add(index,s);
+        return true;
+
+    }
+    public State getState(String name)
+    {
+        for (State S : listOfStates)
+        {
+            if (S.getAbbr().equalsIgnoreCase(name))
+                return  S;
+
+        }
+        return null;
+    }
+
+    public String toString() {
+        String states = "";
+        for (State S : listOfStates)
+        {
+            states +=S.getName()+"\n";
+        }
+        return "Country{ " +
+                "name='" + name + '\'' +
+                ", countryCode2='" + countryCode2 + '\'' +
+                ", countryCode3='" + countryCode3 + '\'' +
+                '}'+
+                ",\nlist Of States: \n" + states;
+    }
 }

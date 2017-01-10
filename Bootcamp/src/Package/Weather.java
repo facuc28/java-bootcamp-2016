@@ -11,18 +11,20 @@ public class Weather {
     private Actual ActualWeather;
     private Extended extendedWeather;
     private Wind wind;
+    private Atmosphere atmosphere;
     //Constructors
     public Weather(){}
     public Weather(String date, String description){
         this.date = date;
         this.description = description;
     }
-    public Weather(String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind) {
+    public Weather(String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind, Atmosphere atmosphere) {
         this.date = date;
         this.description = description;
-        ActualWeather = actualWeather;
+        this.ActualWeather = actualWeather;
         this.extendedWeather = extendedWeather;
         this.wind = wind;
+        this.atmosphere = atmosphere;
     }
 
     //Getters and Setters methods
@@ -47,7 +49,8 @@ public class Weather {
         return date + "\n" +
                 "  Wind=" + wind.toString() + "\n" +
                 "  Description= '" + description  +"'"+'\n' +
-                "Actual Weather= " + ActualWeather.toString() + "\n" +
+                "Atmosphere= "+ atmosphere.toString() +
+                "\nActual Weather= " + ActualWeather.toString() + "\n" +
                 "Extended Weather=" + extendedWeather.toString() +
                 '}';
     }

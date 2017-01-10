@@ -55,7 +55,7 @@ public class Atmosphere {
 
    //ToString method
     public String toString() {
-        return "\n"+"Atmosphere {" +
+        return "{ "+
                 "humidity=" + humidity +
                 ", pressure=" + pressure +
                 ", visibility=" + visibility +
