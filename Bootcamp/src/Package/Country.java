@@ -54,9 +54,9 @@ public class Country {
     }
 
     //Methods
-    public boolean addState(int index, State s)
+    public boolean addState(State s)
     {
-        listOfStates.add(index,s);
+        listOfStates.add(s);
         return true;
 
     }
@@ -64,7 +64,7 @@ public class Country {
     {
         for (State S : listOfStates)
         {
-            if (S.getAbbr().equalsIgnoreCase(name))
+            if (S.getName().equalsIgnoreCase(name))
                 return  S;
 
         }
@@ -77,11 +77,11 @@ public class Country {
         {
             states +=S.getName()+"\n";
         }
-        return "Country{ " +
+        return "Country information: { " +
                 "name='" + name + '\'' +
                 ", countryCode2='" + countryCode2 + '\'' +
                 ", countryCode3='" + countryCode3 + '\'' +
-                '}'+
-                ",\nlist Of States: \n" + states;
+                '}'+"\n"+
+                "\nlist Of States: \n" + states;
     }
 }

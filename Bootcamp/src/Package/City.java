@@ -29,7 +29,7 @@ public class City extends Country {
         return super.getName();
     }
 
-    @Override
+
     public String toString() {
         return "City{ " + super.getName() +
                 ", Weather Date=" + weather +

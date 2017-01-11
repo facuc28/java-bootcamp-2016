@@ -46,12 +46,12 @@ public class Weather {
 
     //ToString method
     public String toString() {
-        return date + "\n" +
+        return "   Date: "+date + "\n" +
                 "  Wind=" + wind.toString() + "\n" +
                 "  Description= '" + description  +"'"+'\n' +
-                "Atmosphere= "+ atmosphere.toString() +
+                "  Atmosphere= "+ atmosphere.toString() +
                 "\nActual Weather= " + ActualWeather.toString() + "\n" +
-                "Extended Weather=" + extendedWeather.toString() +
+                "  Extended Weather=" + extendedWeather.toString() +
                 '}';
     }
 }

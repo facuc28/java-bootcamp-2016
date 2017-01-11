@@ -63,9 +63,9 @@ public class State extends Country {
     }
 
     //Methods
-    public boolean addCity(int index, City C)
+    public boolean addCity(City C)
     {
-        listOfCities.add(index,C);
+        listOfCities.add(C);
         return true;
 
     }
