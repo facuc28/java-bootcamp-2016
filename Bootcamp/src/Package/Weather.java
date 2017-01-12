@@ -19,8 +19,7 @@ public class Weather {
         this.date = date;
         this.description = description;
     }
-    public Weather(int id_weather, String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind, Atmosphere atmosphere) {
-        this.id_weather = id_weather;
+    public Weather(String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind, Atmosphere atmosphere) {
         this.date = date;
         this.description = description;
         this.ActualWeather = actualWeather;
