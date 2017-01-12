@@ -1,5 +1,7 @@
 package Package;
 
+import java.sql.ResultSet;
+
 /**
  * Created by facundo crusta on 10/01/2017.
  */
@@ -10,6 +12,8 @@ public class Extended extends Weather {
     private double maximum;
     private double minimum;
 
+    //Auxiliary
+    DataBase DB;
     //Constructors
     public Extended(){}
     public Extended(String weekDay, double maximum, double minimum) {
@@ -64,6 +68,30 @@ public class Extended extends Weather {
     public void setDescription(String description)
     {
         super.setDescription(description);
+    }
+
+    public Extended[] getExtended(int weatherID)
+    {
+        //Auxiliary
+        ResultSet resultSet;
+        Extended [] extendedArray = new Extended[10];
+        Extended extended;
+        int i=0;
+        String sql="SELECT * FROM extendedWeather WHERE id_weather="+weatherID;
+        resultSet = DB.DBRequest(sql);
+        try {
+            while (resultSet.next())
+            {
+                extended = new Extended(resultSet.getDate("date").toString(), resultSet.getString("description"), resultSet.getString("weekDay"), resultSet.getDouble("maximum"), resultSet.getDouble("minimum"));
+                extendedArray[i] = extended;
+                i++;
+            }
+
+        }catch (Exception E)
+        {
+            E.printStackTrace();
+        }
+        return extendedArray;
     }
 
     //ToString method

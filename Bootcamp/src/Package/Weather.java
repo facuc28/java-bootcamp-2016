@@ -6,6 +6,7 @@ package Package;
 public class Weather {
 
     //Attributes
+    private int id_weather;
     private String date;
     private String description;
     private Actual ActualWeather;
@@ -18,7 +19,8 @@ public class Weather {
         this.date = date;
         this.description = description;
     }
-    public Weather(String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind, Atmosphere atmosphere) {
+    public Weather(int id_weather, String date, String description, Actual actualWeather, Extended extendedWeather, Wind wind, Atmosphere atmosphere) {
+        this.id_weather = id_weather;
         this.date = date;
         this.description = description;
         this.ActualWeather = actualWeather;
@@ -34,6 +36,10 @@ public class Weather {
 
     public String getDescription() {
         return description;
+    }
+    public int getId_weather()
+    {
+        return this.id_weather;
     }
 
     public void setDate(String date) {

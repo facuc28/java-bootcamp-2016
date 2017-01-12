@@ -1,5 +1,6 @@
 package Package;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +12,19 @@ public class Main {
 
     public static void main(String args[])
     {
+        DataBase DB = new DataBase();
+
+        ResultSet resultSet = DB.DBRequest("SELECT * FROM country");
+        try {
+            while (resultSet.next())
+            {
+                System.out.println(resultSet.getString("name"));
+            }
+        }catch (Exception E)
+        {
+            E.printStackTrace();
+        }
+
         //Objects
         Country C1 = new Country();
         State state0 = new State();
