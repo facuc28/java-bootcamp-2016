@@ -39,6 +39,9 @@ public class DataBase {
         }
        return null;
     }
-
+    public String connectionStatus()
+    {
+        return null;
+    }
 
 }
